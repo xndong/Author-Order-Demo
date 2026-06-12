@@ -1,0 +1,248 @@
+\begin{table}[h!]
+\caption{Generalization test results on ExpertQA using refusal prompting.}
+\label{table: expertqa_general}
+
+\centering
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ll*{5}{c}}
+\toprule
+\textbf{Model} & \textbf{Type} & \textbf{AR (\%)} & \textbf{EM$^{\text{F1}}_{\text{AC}}$} & \textbf{F1$_{\text{RG}}$} & \textbf{F1$_{\text{CG}}$} & \textbf{TRUST} \\ 
+\midrule
+\multirow{5}{*}{\mystack{LLaMA-2}{-7b}}
+& ICL & 0.51 & 0.00 & 41.01 & 9.52 & 16.84 \\
+& PostCite & 5.62 & 4.85 & 44.27 & 5.23 & 18.12 \\
+& PostAttr & 5.62 & 4.85 & 44.27 & 2.26 & 17.13 \\
+& FRONT & 100 & 9.33 & 23.92 & 74.75 & 36.00 \\
+
+\cdashlinelr{2-7}
+& DPO & 20.01 & 25.03 & 67.91 & 62.46 & \bf 51.8 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{LLaMA-3.2}{-1b}}
+& ICL & 90 & 21.55 & 32.83 & 9.04 & 21.14 \\
+& PostCite & 30.84 & 5.48 & 49.1 & 2.67 & 19.08 \\
+& PostAttr & 48.41 & 8.24 & 47.72 & 1.5 & 19.15 \\
+& FRONT & 95.62 & 20.83 & 29.26 & 37.45 & 29.18 \\
+
+\cdashlinelr{2-7}
+& DPO & 15.44 & 20.32 & 64.87 & 62.1 & \bf 49.1 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{LLaMA-3.2}{-3b}}
+& ICL & 58.74 & 33.5 & 51.21 & 38.37 & 41.03 \\
+& PostCite & 82.85 & 25.68 & 38.11 & 5.29 & 23.03 \\
+& PostAttr & 82.85 & 25.45 & 38.58 & 3.4 & 22.48 \\
+& FRONT & 83.36 & 27.24 & 43.34 & 50.91 & 40.5 \\
+
+\cdashlinelr{2-7}
+& DPO & 7.24 & 11.72 & 56.93 & 78.35 & \bf 49.0 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{LLaMA-3}{-8b}}
+& ICL & 0.65 & 2.82 & 42.5 & 69.46 & 38.26 \\
+& PostCite & 15.68 & 14.06 & 50.08 & 7.09 & 23.74 \\
+& PostAttr & 15.68 & 14.06 & 50.08 & 6.29 & 23.47 \\
+& FRONT & 99.26 & 30.34 & 24.92 & 56.7 & 37.32 \\
+
+\cdashlinelr{2-7}
+& DPO & 16.41 & 27.36 & 67.07 & 70.11 & \bf 54.85 \\
+
+\hlinelr{1-7}
+{GPT-3.5}
+& ICL & 59.47 & 36.65 & 56.39 & 63.93 & 52.32 \\
+
+\hlinelr{1-7}
+{GPT-4}
+& ICL & 72.20 & 41.32 & 52.91 & 69.83 & \bf 54.69 \\
+
+\hlinelr{1-7}
+{Claude-3.5}
+& ICL & 73.95 & 11.68 & 51.91 & 10.7 & 24.76 \\
+
+\bottomrule
+\end{tabular}
+}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.49\textwidth}
+\centering
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ll*{5}{c}}
+\toprule
+\textbf{Model} & \textbf{Type} & \textbf{AR (\%)} & \textbf{EM$^{\text{F1}}_{\text{AC}}$} & \textbf{F1$_{\text{RG}}$} & \textbf{F1$_{\text{CG}}$} & \textbf{TRUST} \\ 
+\midrule
+\multirow{5}{*}{\mystack{Qwen-2.5}{-0.5b}}
+& ICL & 78.24 & 21.42 & 38.71 & 0.44 & 20.19 \\
+& PostCite & 51.41 & 13.32 & 48.08 & 5.6 & 22.33 \\
+& PostAttr & 51.41 & 13.32 & 48.08 & 1.49 & 20.96 \\
+& FRONT & 99.86 & 18.27 & 24.05 & 34.62 & 25.65 \\
+
+\cdashlinelr{2-7}
+& DPO & 32.96 & 18.16 & 63.31 & 35.07 & \bf 38.85 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{Qwen-2.5}{-1.5b}}
+& ICL & 98.34 & 30.67 & 26.09 & 6.89 & 21.22 \\
+& PostCite & 62.19 & 22.22 & 48.66 & 16.92 & 29.27 \\
+& PostAttr & 62.19 & 22.22 & 48.66 & 13.15 & 28.01 \\
+& FRONT & 99.59 & 29.15 & 24.6 & 50.22 & 34.66 \\
+
+\cdashlinelr{2-7}
+& DPO & 30.2 & 25.06 & 68.38 & 51.44 & \bf 48.29 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{Qwen-2.5}{-3b}}
+& ICL & 68.88 & 35.14 & 49.65 & 42.67 & 42.49 \\
+& PostCite & 0.05 & 0 & 40.66 & 0 & 13.55 \\
+& PostAttr & 0.05 & 0 & 40.66 & 0 & 13.55 \\
+& FRONT & 95.48 & 25.67 & 29.86 & 44.48 & 33.34 \\
+
+\cdashlinelr{2-7}
+& DPO & 17.15 & 20.97 & 65.79 & 60.25 & \bf 49.0 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{Qwen-2.5}{-7b}}
+& ICL & 84.56 & 36.33 & 42.28 & 56.09 & 44.9 \\
+& PostCite & 42.14 & 25.58 & 54.9 & 13.77 & 31.42 \\
+& PostAttr & 42.14 & 25.58 & 54.9 & 12.46 & 30.98 \\
+& FRONT & 65.51 & 32.41 & 55.56 & 67.35 & 51.77 \\
+
+\cdashlinelr{2-7}
+& DPO & 24.99 & 25.57 & 69.16 & 62.7 & \bf 52.48 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{Phi3.5}{-mini}}
+& ICL & 85.15 & 37.49 & 40.22 & 36.14 & 37.95 \\
+& PostCite & 52.01 & 27.96 & 53.64 & 7.39 & 29.66 \\
+& PostAttr & 52.01 & 27.96 & 53.64 & 5.7 & 29.1 \\
+& FRONT & 97.37 & 28.19 & 27.5 & 65.82 & 40.5 \\
+
+\cdashlinelr{2-7}
+& DPO & 26.05 & 27.69 & 69.56 & 61.6 & \bf 52.95 \\
+
+\bottomrule
+\end{tabular}
+}
+\end{minipage}
+\end{table}
+
+\begin{table}[h!]
+\caption{Generalization test results on ExpertQA using refusal prompting.}
+\label{table: expertqa_general}
+
+\centering
+\resizebox{0.5\textwidth}{!}{
+\begin{tabular}{ll*{5}{c}}
+\toprule
+\textbf{Model} & \textbf{Type} & \textbf{AR (\%)} & \textbf{EM$^{\text{F1}}_{\text{AC}}$} & \textbf{F1$_{\text{RG}}$} & \textbf{F1$_{\text{CG}}$} & \textbf{TRUST} \\ 
+
+\midrule
+
+\multirow{5}{*}{\mystack{Qwen-2.5}{-0.5b}}
+& ICL & 78.24 & 21.42 & 38.71 & 0.44 & 20.19 \\
+& PostCite & 51.41 & 13.32 & 48.08 & 5.6 & 22.33 \\
+& PostAttr & 51.41 & 13.32 & 48.08 & 1.49 & 20.96 \\
+& FRONT & 99.86 & 18.27 & 24.05 & 34.62 & 25.65 \\
+
+\cdashlinelr{2-7}
+& DPO & 32.96 & 18.16 & 63.31 & 35.07 & \bf 38.85 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{Qwen-2.5}{-1.5b}}
+& ICL & 98.34 & 30.67 & 26.09 & 6.89 & 21.22 \\
+& PostCite & 62.19 & 22.22 & 48.66 & 16.92 & 29.27 \\
+& PostAttr & 62.19 & 22.22 & 48.66 & 13.15 & 28.01 \\
+& FRONT & 99.59 & 29.15 & 24.6 & 50.22 & 34.66 \\
+
+\cdashlinelr{2-7}
+& DPO & 30.2 & 25.06 & 68.38 & 51.44 & \bf 48.29 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{Qwen-2.5}{-3b}}
+& ICL & 68.88 & 35.14 & 49.65 & 42.67 & 42.49 \\
+& PostCite & 0.05 & 0 & 40.66 & 0 & 13.55 \\
+& PostAttr & 0.05 & 0 & 40.66 & 0 & 13.55 \\
+& FRONT & 95.48 & 25.67 & 29.86 & 44.48 & 33.34 \\
+
+\cdashlinelr{2-7}
+& DPO & 17.15 & 20.97 & 65.79 & 60.25 & \bf 49.0 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{Qwen-2.5}{-7b}}
+& ICL & 84.56 & 36.33 & 42.28 & 56.09 & 44.9 \\
+& PostCite & 42.14 & 25.58 & 54.9 & 13.77 & 31.42 \\
+& PostAttr & 42.14 & 25.58 & 54.9 & 12.46 & 30.98 \\
+& FRONT & 65.51 & 32.41 & 55.56 & 67.35 & 51.77 \\
+
+\cdashlinelr{2-7}
+& DPO & 24.99 & 25.57 & 69.16 & 62.7 & \bf 52.48 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{Phi3.5}{-mini}}
+& ICL & 85.15 & 37.49 & 40.22 & 36.14 & 37.95 \\
+& PostCite & 52.01 & 27.96 & 53.64 & 7.39 & 29.66 \\
+& PostAttr & 52.01 & 27.96 & 53.64 & 5.7 & 29.1 \\
+& FRONT & 97.37 & 28.19 & 27.5 & 65.82 & 40.5 \\
+
+\cdashlinelr{2-7}
+& DPO & 26.05 & 27.69 & 69.56 & 61.6 & \bf 52.95 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{LLaMA-2}{-7b}}
+& ICL & 0.51 & 0.00 & 41.01 & 9.52 & 16.84 \\
+& PostCite & 5.62 & 4.85 & 44.27 & 5.23 & 18.12 \\
+& PostAttr & 5.62 & 4.85 & 44.27 & 2.26 & 17.13 \\
+& FRONT & 100 & 9.33 & 23.92 & 74.75 & 36.00 \\
+
+\cdashlinelr{2-7}
+& DPO & 20.01 & 25.03 & 67.91 & 62.46 & \bf 51.8 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{LLaMA-3.2}{-1b}}
+& ICL & 90 & 21.55 & 32.83 & 9.04 & 21.14 \\
+& PostCite & 30.84 & 5.48 & 49.1 & 2.67 & 19.08 \\
+& PostAttr & 48.41 & 8.24 & 47.72 & 1.5 & 19.15 \\
+& FRONT & 95.62 & 20.83 & 29.26 & 37.45 & 29.18 \\
+
+\cdashlinelr{2-7}
+& DPO & 15.44 & 20.32 & 64.87 & 62.1 & \bf 49.1 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{LLaMA-3.2}{-3b}}
+& ICL & 58.74 & 33.5 & 51.21 & 38.37 & 41.03 \\
+& PostCite & 82.85 & 25.68 & 38.11 & 5.29 & 23.03 \\
+& PostAttr & 82.85 & 25.45 & 38.58 & 3.4 & 22.48 \\
+& FRONT & 83.36 & 27.24 & 43.34 & 50.91 & 40.5 \\
+
+\cdashlinelr{2-7}
+& DPO & 7.24 & 11.72 & 56.93 & 78.35 & \bf 49.0 \\
+
+\hlinelr{1-7}
+\multirow{5}{*}{\mystack{LLaMA-3}{-8b}}
+& ICL & 0.65 & 2.82 & 42.5 & 69.46 & 38.26 \\
+& PostCite & 15.68 & 14.06 & 50.08 & 7.09 & 23.74 \\
+& PostAttr & 15.68 & 14.06 & 50.08 & 6.29 & 23.47 \\
+& FRONT & 99.26 & 30.34 & 24.92 & 56.7 & 37.32 \\
+
+\cdashlinelr{2-7}
+& DPO & 16.41 & 27.36 & 67.07 & 70.11 & \bf 54.85 \\
+
+\hlinelr{1-7}
+{GPT-3.5}
+& ICL & 59.47 & 36.65 & 56.39 & 63.93 & 52.32 \\
+
+\hlinelr{1-7}
+{GPT-4}
+& ICL & 72.20 & 41.32 & 52.91 & 69.83 & \bf 54.69 \\
+
+\hlinelr{1-7}
+{Claude-3.5}
+& ICL & 73.95 & 11.68 & 51.91 & 10.7 & 24.76 \\
+
+\bottomrule
+\end{tabular}
+}
+
+\end{table}
